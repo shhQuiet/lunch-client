@@ -1,0 +1,9 @@
+<h1>places</h1>
+{{#link-to 'places.new'}}add new place{{/link-to}}
+{{outlet}}
+<div class="row">
+	{{#each model}}
+		{{render 'place_thumb' this}}
+	{{/each}}
+</div>
+</ul>

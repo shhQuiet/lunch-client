@@ -1,0 +1,23 @@
+<h1>{{name}}</h1>
+
+<form role="form">
+	<div class="form-group">
+		<label>
+			Name
+			{{input value=name class="form-control"}}
+		</label>
+		<label>
+			Description
+			{{input value=desc class="form-control"}}
+		</label>
+		<label>
+			Thumbnail URL
+			{{input value=thumbnailUrl class="form-control"}}
+		</label>
+	</div>
+	<div>{{render "place_thumb" this}}</div>
+	<button {{action save}} class="btn btn-default">Save</button>
+	<button {{action deletePlace}} class="btn btn-danger">Delete this place</button>
+</form>
+
+{{outlet}}

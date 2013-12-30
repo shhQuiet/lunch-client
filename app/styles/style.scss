@@ -1,0 +1,18 @@
+@import "bootstrap-sass/lib/bootstrap";
+
+/* Put your CSS here */
+body {
+    margin: 60px 0;
+}
+
+.place.thumbnail {
+	label {
+		padding-top: 6px;
+		padding-bottom: 6px;
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+	margin: 0.5em;
+	height: 2in;
+	overflow: hidden;
+}

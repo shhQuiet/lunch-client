@@ -1,0 +1,18 @@
+<h1>{{name}}</h1>
+{{#if thumbnailUrl}}
+<img {{bind-attr src=thumbnailUrl}}>
+{{/if}}
+<p>{{desc}}</p>
+<div class="btn-group" data-toggle="buttons">
+	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenSun}}S</label>
+	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenMon}}M</label>
+	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenTue}}T</label>
+	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenWed}}W</label>
+	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenThu}}T</label>
+	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenFri}}F</label>
+	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenSat}}S</label>
+</div>
+<hr/>
+{{#linkTo 'place.edit' model}}Change{{/linkTo}}
+
+{{outlet}}
