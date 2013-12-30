@@ -18,4 +18,14 @@ LunchClient.Router.map(function() {
         path: '/place/:place_id/edit'
     });
 
+    this.resource('diners', function() {
+        this.route('new');
+    });
+    this.resource('diner', {
+        path: '/diner/:diner_id'
+    });
+    this.resource('diner.edit', {
+        path: '/diner/:diner_id/edit'
+    });
+
 });

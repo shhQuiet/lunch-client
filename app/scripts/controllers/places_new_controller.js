@@ -1,4 +1,5 @@
 LunchClient.PlacesNewController = Ember.Controller.extend({
+    name: '',
     actions: {
         save: function() {
             var self = this,

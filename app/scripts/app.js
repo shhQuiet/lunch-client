@@ -9,6 +9,5 @@ require('scripts/views/*');
 require('scripts/router');
 
 LunchClient.ApplicationAdapter = DS.RESTAdapter.extend({
-    host: 'http://localhost:3000',
-    dataType: 'jsonp'
+    host: 'http://localhost:3000'
 });

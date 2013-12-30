@@ -9,7 +9,16 @@
             </button>
             <a class="navbar-brand" href="#">Lunchinator&trade;</a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse"></div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    {{#link-to 'places'}}Places{{/link-to}}
+                </li>
+                <li>
+                    {{#link-to 'diners'}}Diners{{/link-to}}
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="container" id="main">
         <div class="row">{{outlet}}</div>

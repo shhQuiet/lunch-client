@@ -1,0 +1,9 @@
+<h1>diners</h1>
+{{#link-to 'diners.new'}}add new diner{{/link-to}}
+{{outlet}}
+<div class="row">
+	{{#each model}}
+		{{render 'diner_thumb' this}}
+	{{/each}}
+</div>
+</ul>

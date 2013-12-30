@@ -1,4 +1,4 @@
-LunchClient.PlaceEditController = Ember.ObjectController.extend({
+LunchClient.DinerEditController = Ember.ObjectController.extend({
     actions: {
         save: function() {
             var self = this;
@@ -6,17 +6,12 @@ LunchClient.PlaceEditController = Ember.ObjectController.extend({
                 self.transitionToRoute('places');
             });
         },
-        confirmDeletePlace: function() {
-
-        },
         deletePlace: function() {
             var self = this,
                 mdl = this.get('model');
             mdl.deleteRecord();
             mdl.save().then(function() {
-                this.setTimeout(function() {
-                    self.transitionToRoute('places');
-                }, 500);
+                self.transitionToRoute('places');
             }, function(err) {
                 console.log('ERROR:' + err);
             });

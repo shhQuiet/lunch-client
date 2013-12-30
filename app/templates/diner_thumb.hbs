@@ -1,0 +1,11 @@
+{{#link-to 'place' this}}
+<div class="col-xs-6 col-sm-2 place thumbnail">
+	{{#if thumbnailUrl}}
+	<img {{bind-attr src=thumbnailUrl}}>
+	{{else}}
+	{{name}}
+	{{/if}}
+	<hr/>
+	{{desc}}
+</div>
+{{/link-to}}

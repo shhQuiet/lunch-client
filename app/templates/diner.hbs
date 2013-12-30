@@ -1,0 +1,9 @@
+<h1>{{name}}</h1>
+{{#if thumbnailUrl}}
+<img {{bind-attr src=thumbnailUrl}}>
+{{/if}}
+<p>{{desc}}</p>
+<hr/>
+{{#linkTo 'diner.edit' model}}Change{{/linkTo}}
+
+{{outlet}}
