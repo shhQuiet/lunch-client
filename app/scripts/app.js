@@ -9,7 +9,6 @@ require('scripts/views/*');
 require('scripts/router');
 
 LunchClient.ApplicationAdapter = DS.RESTAdapter.extend({
-    // host: 'http://group-lunch-stats.herokuapp.com',
     host: 'http://localhost:3000',
     dataType: 'jsonp'
 });
