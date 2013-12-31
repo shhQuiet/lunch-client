@@ -1,26 +1,31 @@
 LunchClient.PlaceController = Ember.ObjectController.extend({
-    date: '',
+    visit: Ember.Object.extend({
+        date: 'today',
+        dinerCount: 1
+    }),
     actions: {
         addNewVisit: function() {
             var self = this,
-                days,
+                place = this.get('model'),
                 mdl = {
-                    date: this.get('date'),
-                    dinerCount: this.get('dinerCount')
+                    date: this.get('visit.date'),
+                    dinerCount: this.get('visit.dinerCount'),
+                    place: place
                 },
                 rec = this.store.createRecord('visit', mdl);
 
-            rec.save().then(function(rec) {
-                var mdl = self.get('model');
+            place.get('visits').pushObject(rec);
 
-                mdl.get('visits').pushObject(rec);
-                mdl.save();
+            rec.save().then(function(rec) {
+                place.get('visits').pushObject(rec);
+                place.save();
             }, function(err) {
+                console.log("ERROR:" + err.status);
                 rec.rollback();
                 self.store.unloadRecord(rec);
             });
-            this.set('date', '');
-            this.set('dinerCount', 0);
+            self.set('date', '');
+            self.set('dinerCount', 0);
         }
     }
 });
