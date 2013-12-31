@@ -15,12 +15,15 @@ LunchClient.PlaceController = Ember.ObjectController.extend({
                 rec = this.store.createRecord('visit', mdl);
 
             place.get('visits').pushObject(rec);
-
+            // place.save();
             rec.save().then(function(rec) {
-                place.get('visits').pushObject(rec);
-                place.save();
+                place.save().then(function() {}, function(err) {
+                    console.log("ERROR saving place:" + err.status);
+                    rec.rollback();
+                    self.store.unloadRecord(rec);
+                });
             }, function(err) {
-                console.log("ERROR:" + err.status);
+                console.log("ERROR saving visit:" + err.status);
                 rec.rollback();
                 self.store.unloadRecord(rec);
             });

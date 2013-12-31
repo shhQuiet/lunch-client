@@ -14,14 +14,14 @@
 				</a>
 			</div>
 			{{/if}}
-			<div>
-				<button data-toggle="modal" data-target="#logNewVisit" class="btn btn-default btn-small">Log a visit</button>
-			</div>
 			<hr/>
 			{{#linkTo 'place.edit' model}}Settings{{/linkTo}}
 		</div>
 		<div class="col-sm-8">
-			<h3>Visits to {{name}}</h3>
+			<h3>
+				<button data-toggle="modal" data-target="#logNewVisit" class="btn btn-primary">Log a new visit</button>
+				Visits to {{name}}
+			</h3>
 			<table class="table">
 				<thead>
 					<tr>

@@ -18,10 +18,11 @@ LunchClient.Router.map(function() {
     });
     this.resource('place', {
         path: '/place/:place_id'
-    }, function() {
-        this.resource('place.logs', {
-            path: '/place/:place_id/logs'
-        });
+    });
+
+    this.resource('visits');
+    this.resource('visit', {
+        path: '/visit/:visit_id'
     });
 
     this.resource('place.edit', {
