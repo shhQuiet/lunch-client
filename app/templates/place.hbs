@@ -1,18 +1,71 @@
-<h1>{{name}}</h1>
-{{#if thumbnailUrl}}
-<img {{bind-attr src=thumbnailUrl}}>
-{{/if}}
-<p>{{desc}}</p>
-<div class="btn-group" data-toggle="buttons">
-	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenSun}}S</label>
-	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenMon}}M</label>
-	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenTue}}T</label>
-	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenWed}}W</label>
-	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenThu}}T</label>
-	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenFri}}F</label>
-	<label class="btn btn-primary">{{input type="checkbox" checked=isOpenSat}}S</label>
+<div class="well">
+	<div class="row">
+		<div class="col-sm-4">
+			<h1>{{name}}</h1>
+			{{#if thumbnailUrl}}
+			<img {{bind-attr src=thumbnailUrl}} class="img-responsive">
+			{{/if}}
+			<p>{{desc}}</p>
+			{{days-open place=this}}
+			{{#if menuUrl}}
+			<div class="externalLink">
+				<a {{bind-attr href=menuUrl}}>
+					<button class="btn form-control">Click to see menu...</button>
+				</a>
+			</div>
+			{{/if}}
+			<div>
+				<button data-toggle="modal" data-target="#logNewVisit" class="btn btn-default btn-small">Log a visit</button>
+			</div>
+			<hr/>
+			{{#linkTo 'place.edit' model}}Settings{{/linkTo}}
+		</div>
+		<div class="col-sm-8">
+			<h3>Visits to {{name}}</h3>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Diners</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each visits}}
+					<tr>
+						<td>{{date}}</td>
+						<td>{{dinerCount}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	{{outlet}}
 </div>
-<hr/>
-{{#linkTo 'place.edit' model}}Change{{/linkTo}}
 
-{{outlet}}
+<div class="modal fade" id="logNewVisit">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">New visit to {{name}}</h4>
+			</div>
+			<div class="modal-body">
+				<label>
+					Date:
+					{{input class="form-control" placeholder="date of visit" value=visit.date}}
+				</label>
+				<label>
+					Number of diners in party
+					{{input class="form-control" placeholder="1" value=visit.dinerCount}}
+				</label>
+			</div>
+			<div class="modal-footer">
+				<button {{action addNewVisit}} class="btn btn-primary" data-dismiss="modal">Log visit</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>

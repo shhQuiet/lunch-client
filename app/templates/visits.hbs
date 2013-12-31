@@ -1,0 +1,9 @@
+<h1>visits</h1>
+
+<ul>
+ {{#each model}}
+ <li>{{#linkTo 'visit' this}}{{this.id}}{{/linkTo}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

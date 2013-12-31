@@ -6,9 +6,6 @@ LunchClient.PlaceEditController = Ember.ObjectController.extend({
                 self.transitionToRoute('places');
             });
         },
-        confirmDeletePlace: function() {
-
-        },
         deletePlace: function() {
             var self = this,
                 mdl = this.get('model');
