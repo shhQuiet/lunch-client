@@ -35,6 +35,6 @@
 
     },
     "scripts": {
-        "test": "travis_build.sh"
+        "test": "./travis_build.sh"
     }
 }
