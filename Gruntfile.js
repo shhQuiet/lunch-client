@@ -1,8 +1,10 @@
 // Generated on 2013-12-29 using generator-ember 0.7.1
 'use strict';
 var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
-var mountFolder = function (connect, dir) {
+var lrSnippet = require('connect-livereload')({
+    port: LIVERELOAD_PORT
+});
+var mountFolder = function(connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
 
@@ -12,7 +14,7 @@ var mountFolder = function (connect, dir) {
 // use this if you want to match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     // show elapsed time at the end
     require('time-grunt')(grunt);
     // load all grunt tasks
@@ -59,7 +61,7 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    middleware: function (connect) {
+                    middleware: function(connect) {
                         return [
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
@@ -70,7 +72,7 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    middleware: function (connect) {
+                    middleware: function(connect) {
                         return [
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, 'test')
@@ -80,7 +82,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    middleware: function (connect) {
+                    middleware: function(connect) {
                         return [
                             mountFolder(connect, yeomanConfig.dist)
                         ];
@@ -269,7 +271,7 @@ module.exports = function (grunt) {
         },
         emberTemplates: {
             options: {
-                templateName: function (sourceFile) {
+                templateName: function(sourceFile) {
                     var templatePath = yeomanConfig.app + '/templates/';
                     return sourceFile.replace(templatePath, '');
                 }
@@ -283,7 +285,7 @@ module.exports = function (grunt) {
         neuter: {
             app: {
                 options: {
-                    filepathTransform: function (filepath) {
+                    filepathTransform: function(filepath) {
                         return 'app/' + filepath;
                     }
                 },
@@ -293,7 +295,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('server', function (target) {
+    grunt.registerTask('server', function(target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
         }
@@ -307,6 +309,10 @@ module.exports = function (grunt) {
             'watch'
         ]);
     });
+
+    grunt.registerTask('travis', [
+        "jshint"
+    ]);
 
     grunt.registerTask('test', [
         'clean:server',
