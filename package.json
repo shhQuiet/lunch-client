@@ -33,6 +33,6 @@
         "node": ">=0.8.0"
     },
     "scripts": {
-        "test": "node grunt test"
+        "test": "bower install && grunt test"
     }
 }
