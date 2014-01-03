@@ -9,8 +9,12 @@ h1,h2,h3 {
 	margin-top: 1em;
 }
 
-.place.thumbnail {
-	margin: 0.5em;
+.myContainer {
+	margin: 2em;
+}
+
+.place .thumbnail {
+	padding: 0.5em;
 	height: 2.5in;
 	overflow: hidden;
 	h1 {

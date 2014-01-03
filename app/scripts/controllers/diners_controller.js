@@ -1,3 +1,3 @@
-LunchClient.DinersController = Ember.ObjectController.extend({
+LunchClient.UsersController = Ember.ObjectController.extend({
 });
 

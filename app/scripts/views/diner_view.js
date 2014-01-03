@@ -1,3 +1,3 @@
-LunchClient.DinerView = Ember.View.extend({
-    templateName: 'diner'
+LunchClient.UserView = Ember.View.extend({
+    templateName: 'user'
 });

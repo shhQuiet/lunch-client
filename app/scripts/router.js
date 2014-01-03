@@ -29,14 +29,14 @@ LunchClient.Router.map(function() {
         path: '/place/:place_id/edit'
     });
 
-    this.resource('diners', function() {
+    this.resource('users', function() {
         this.route('new');
     });
-    this.resource('diner', {
-        path: '/diner/:diner_id'
+    this.resource('user', {
+        path: '/user/:user_id'
     });
-    this.resource('diner.edit', {
-        path: '/diner/:diner_id/edit'
+    this.resource('user.edit', {
+        path: '/user/:user_id/edit'
     });
 
 });

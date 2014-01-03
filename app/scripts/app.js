@@ -9,5 +9,9 @@ require('scripts/views/*');
 require('scripts/router');
 
 LunchClient.ApplicationAdapter = DS.RESTAdapter.extend({
-    host: 'http://localhost:3000'
+   host: 'http://localhost:3000',
+    // host: 'http://54.209.163.37',  // AWS
+    headers: {
+        'Authorization': 'TESTING_ONLY_CHANGE_ME'
+    }
 });

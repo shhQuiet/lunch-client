@@ -1,4 +1,4 @@
-LunchClient.DinerEditController = Ember.ObjectController.extend({
+LunchClient.UserEditController = Ember.ObjectController.extend({
     actions: {
         save: function() {
             var self = this;

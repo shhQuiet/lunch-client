@@ -311,9 +311,8 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('travis', [
-        "clean:server",
-        "concurrent:test",
-        "jshint"
+        "jshint",
+        "concurrent:test"
     ]);
 
     grunt.registerTask('test', [

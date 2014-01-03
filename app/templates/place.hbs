@@ -26,14 +26,14 @@
 				<thead>
 					<tr>
 						<th>Date</th>
-						<th>Diners</th>
+						<th>Users</th>
 					</tr>
 				</thead>
 				<tbody>
 					{{#each visits}}
 					<tr>
 						<td>{{date}}</td>
-						<td>{{dinerCount}}</td>
+						<td>{{userCount}}</td>
 					</tr>
 					{{/each}}
 				</tbody>
@@ -56,8 +56,8 @@
 					{{input class="form-control" placeholder="date of visit" value=visit.date}}
 				</label>
 				<label>
-					Number of diners in party
-					{{input class="form-control" placeholder="1" value=visit.dinerCount}}
+					Number of users in party
+					{{input class="form-control" placeholder="1" value=visit.userCount}}
 				</label>
 			</div>
 			<div class="modal-footer">

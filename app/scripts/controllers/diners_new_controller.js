@@ -1,4 +1,4 @@
-LunchClient.DinersNewController = Ember.Controller.extend({
+LunchClient.UsersNewController = Ember.Controller.extend({
     actions: {
         save: function() {
             var self = this,
@@ -6,8 +6,8 @@ LunchClient.DinersNewController = Ember.Controller.extend({
             var mdl = {
                 name: this.get('name'),
             };
-            this.store.createRecord('diner', mdl).save().then(function() {
-                self.transitionToRoute('diners');
+            this.store.createRecord('user', mdl).save().then(function() {
+                self.transitionToRoute('users');
             });
         }
     }

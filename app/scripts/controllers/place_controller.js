@@ -1,7 +1,7 @@
 LunchClient.PlaceController = Ember.ObjectController.extend({
     visit: Ember.Object.extend({
         date: 'today',
-        dinerCount: 1
+        userCount: 1
     }),
     actions: {
         addNewVisit: function() {
@@ -9,7 +9,7 @@ LunchClient.PlaceController = Ember.ObjectController.extend({
                 place = this.get('model'),
                 mdl = {
                     date: this.get('visit.date'),
-                    dinerCount: this.get('visit.dinerCount'),
+                    userCount: this.get('visit.userCount'),
                     place: place
                 },
                 rec = this.store.createRecord('visit', mdl);
@@ -28,7 +28,7 @@ LunchClient.PlaceController = Ember.ObjectController.extend({
                 self.store.unloadRecord(rec);
             });
             self.set('date', '');
-            self.set('dinerCount', 0);
+            self.set('userCount', 0);
         }
     }
 });
