@@ -11,14 +11,18 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                <li>{{#link-to 'places'}}Places{{/link-to}}</li>
+                <li>{{#link-to 'users'}}Users{{/link-to}}</li>
+                <li>{{#link-to 'visits'}}Visit log{{/link-to}}</li>
                 <li>
-                    {{#link-to 'places'}}Places{{/link-to}}
-                </li>
-                <li>
-                    {{#link-to 'users'}}Users{{/link-to}}
-                </li>
-                <li>
-                    {{#link-to 'visits'}}Visit log{{/link-to}}
+                    {{#if loggedIn}}
+                        You&apos;re logged in as {{username}}.
+                        <button {{action logout}} class="btn">logout</button>
+                    {{else}}
+                        {{input placeholder="username" value=username}}
+                        {{input type="password" placeholder="username" value=password}}
+                        <button {{action login}} class="btn">login</button>
+                    {{/if}}
                 </li>
             </ul>
         </div>
@@ -26,4 +30,21 @@
     <div class="myContainer" id="main">
         <div class="row">{{outlet}}</div>
     </div>
+</div>
+<div class="modal fade" id="needAuth">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login needed</h4>
+            </div>
+            <div class="modal-body">
+                <p>Sorry, not sure who you are&hellip; Use the login form at the top of the screen to login.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>

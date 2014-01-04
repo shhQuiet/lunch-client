@@ -1,9 +1,12 @@
+<div class="well">
 <h1>{{name}}</h1>
 {{#if thumbnailUrl}}
-<img {{bind-attr src=thumbnailUrl}}>
+    <img {{bind-attr src=thumbnailUrl}}>
 {{/if}}
-<p>{{desc}}</p>
+<p>{{username}}</p>
 <hr/>
 {{#linkTo 'user.edit' model}}Change{{/linkTo}}
 
 {{outlet}}
+
+</div>
