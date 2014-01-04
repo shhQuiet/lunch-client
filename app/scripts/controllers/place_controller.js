@@ -4,7 +4,7 @@ LunchClient.PlaceController = Ember.ObjectController.extend({
         userCount: 1
     }),
     actions: {
-        addNewVisit: function() {
+        addNewVisit: function () {
             var self = this,
                 place = this.get('model'),
                 mdl = {
@@ -16,13 +16,14 @@ LunchClient.PlaceController = Ember.ObjectController.extend({
 
             place.get('visits').pushObject(rec);
             // place.save();
-            rec.save().then(function(rec) {
-                place.save().then(function() {}, function(err) {
+            rec.save().then(function (rec) {
+                place.save().then(function () {
+                }, function (err) {
                     console.log("ERROR saving place:" + err.status);
                     rec.rollback();
                     self.store.unloadRecord(rec);
                 });
-            }, function(err) {
+            }, function (err) {
                 console.log("ERROR saving visit:" + err.status);
                 rec.rollback();
                 self.store.unloadRecord(rec);

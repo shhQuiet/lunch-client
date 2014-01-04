@@ -1,28 +1,28 @@
 <div class="well">
-	<h1>visits</h1>
+    <h1>visits</h1>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Date</th>
-				<th>Number in party</th>
-				<th>Place</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each}}
-			<tr>
-				<td>{{date}}</td>
-				<td>{{userCount}}</td>
-				<td>{{place.name}}</td>
-				<td>
-					<button class="btn btn-default" {{action editPlace this}}>edit</button>
-					<button class="btn btn-default" {{action deletePlace this}}>delete</button>
-				</td>
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
-	{{outlet}}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Number in party</th>
+            <th>Place</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each}}
+            <tr>
+                <td>{{date}}</td>
+                <td>{{userCount}}</td>
+                <td>{{place.name}}</td>
+                <td>
+                    <button class="btn btn-default" {{action editPlace this}}>edit</button>
+                    <button class="btn btn-default" {{action deletePlace this}}>delete</button>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    {{outlet}}
 </div>

@@ -1,7 +1,7 @@
 LunchClient.PlacesController = Ember.ArrayController.extend({
     name: '',
     actions: {
-        addNewPlace: function() {
+        addNewPlace: function () {
             var self = this,
                 days,
                 mdl = {
@@ -10,7 +10,8 @@ LunchClient.PlacesController = Ember.ArrayController.extend({
                 },
                 rec = this.store.createRecord('place', mdl);
 
-            rec.save().then(function() {}, function(err) {
+            rec.save().then(function () {
+            }, function (err) {
                 rec.destroyRecord();
                 self.store.unloadRecord(rec);
             });

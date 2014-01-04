@@ -1,7 +1,7 @@
 LunchClient.PlaceEditRoute = Ember.Route.extend({
-    init: function() {
+    init: function () {
         var self = this;
-        this.addObserver('exit', self.get('model'), function() {
+        this.addObserver('exit', self.get('model'), function () {
             var mdl = self.get('model');
             if (mdl) {
                 console.log('rolling back place changes...');
@@ -9,7 +9,7 @@ LunchClient.PlaceEditRoute = Ember.Route.extend({
             }
         });
     },
-    model: function(model) {
+    model: function (model) {
         return this.get('store').find('place', model.place_id);
     }
 });

@@ -1,46 +1,46 @@
 <h1>{{name}}</h1>
 
 <div class="modal fade" id="confirmDelete">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Confirm delete</h4>
-			</div>
-			<div class="modal-body">
-				<p>Are you sure you want to delete {{name}}?</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<button {{action deletePlace}} class="btn btn-danger" data-dismiss="modal">Delete</button>
-			</div>
-		</div>
-		<!-- /.modal-content -->
-	</div>
-	<!-- /.modal-dialog -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirm delete</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete {{name}}?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button {{action deletePlace}} class="btn btn-danger" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>
 
 <form role="form">
-	<div class="form-group">
-		<label>
-			Name
-			{{input value=name class="form-control"}}
-		</label>
-		<label>
-			Description
-			{{input value=desc class="form-control"}}
-		</label>
-		<label>
-			Thumbnail URL
-			{{input value=thumbnailUrl class="form-control"}}
-		</label>
-		<label>
-			Menu URL
-			{{input value=menuUrl class="form-control"}}
-		</label>
-	</div>
-	<div>{{render "place_thumb" this}}</div>
-	<button {{action save}} class="btn btn-default">Save</button>
-	<button class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Delete this place</button>
+    <div class="form-group">
+        <label>
+            Name
+            {{input value=name class="form-control"}}
+        </label>
+        <label>
+            Description
+            {{input value=desc class="form-control"}}
+        </label>
+        <label>
+            Thumbnail URL
+            {{input value=thumbnailUrl class="form-control"}}
+        </label>
+        <label>
+            Menu URL
+            {{input value=menuUrl class="form-control"}}
+        </label>
+    </div>
+    <div>{{render "place_thumb" this}}</div>
+    <button {{action save}} class="btn btn-default">Save</button>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Delete this place</button>
 </form>
 {{outlet}}

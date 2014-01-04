@@ -1,9 +1,9 @@
 <h1>suggestions</h1>
 
 <ul>
- {{#each model}}
- <li>{{#linkTo 'suggestion' this}}{{this.id}}{{/linkTo}}</li>
-  {{/each}}
+    {{#each model}}
+        <li>{{#linkTo 'suggestion' this}}{{this.id}}{{/linkTo}}</li>
+    {{/each}}
 </ul>
 
 {{outlet}}

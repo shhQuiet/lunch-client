@@ -1,10 +1,11 @@
 <div class="well">
 
-  <h1>login</h1>
-  <div>Username: {{input class="form-control" value=username}}</div>
-  <div>
-    password: {{input class="form-control" type="password" value=password}}
-    <button class="btn" {{action login}}>Login</button>
-  </div>
-  {{outlet}}
+    <h1>login</h1>
+
+    <div>Username: {{input class="form-control" value=username}}</div>
+    <div>
+        password: {{input class="form-control" type="password" value=password}}
+        <button class="btn" {{action login}}>Login</button>
+    </div>
+    {{outlet}}
 </div>

@@ -1,19 +1,21 @@
-<h1>{{username}}</h1>
+<div class="well">
+    <h1>{{username}}</h1>
 
-<form role="form">
-	<div class="form-group">
-		<label>
-			Username
-			{{input value=name class="form-control"}}
-		</label>
-		<label>
-			Thumbnail URL
-			{{input value=thumbnailUrl class="form-control"}}
-		</label>
-	</div>
-	<div>{{render "user_thumb" this}}</div>
-	<button {{action save}} class="btn btn-default">Save</button>
-	<button {{action deleteUser}} class="btn btn-danger">Delete this user</button>
-</form>
+    <form role="form">
+        <div class="form-group">
+            <label>
+                Username
+                {{input value=name class="form-control"}}
+            </label>
+            <label>
+                Thumbnail URL
+                {{input value=thumbnailUrl class="form-control"}}
+            </label>
+        </div>
+        <div>{{render "user_thumb" this}}</div>
+        <button {{action save}} class="btn btn-default">Save</button>
+        <button {{action deleteUser}} class="btn btn-danger">Delete this user</button>
+    </form>
 
-{{outlet}}
+    {{outlet}}
+</div>

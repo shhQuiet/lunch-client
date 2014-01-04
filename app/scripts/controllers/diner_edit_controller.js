@@ -1,18 +1,18 @@
 LunchClient.UserEditController = Ember.ObjectController.extend({
     actions: {
-        save: function() {
+        save: function () {
             var self = this;
-            this.get('model').save().then(function() {
+            this.get('model').save().then(function () {
                 self.transitionToRoute('places');
             });
         },
-        deletePlace: function() {
+        deletePlace: function () {
             var self = this,
                 mdl = this.get('model');
             mdl.deleteRecord();
-            mdl.save().then(function() {
+            mdl.save().then(function () {
                 self.transitionToRoute('places');
-            }, function(err) {
+            }, function (err) {
                 console.log('ERROR:' + err);
             });
         }

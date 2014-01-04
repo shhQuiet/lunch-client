@@ -1,16 +1,16 @@
 <h1>visit</h1>
 
 <table>
-  {{#each model.attributes}}
-  <tr>
-    <td>
-      <strong>{{this.key}}:</strong>
-    </td>
-    <td>
-      {{view LunchClient.BoundTextFieldView contentBinding="this"}}
-    </td>
-  </tr>
-  {{/each}}
+    {{#each model.attributes}}
+        <tr>
+            <td>
+                <strong>{{this.key}}:</strong>
+            </td>
+            <td>
+                {{view LunchClient.BoundTextFieldView contentBinding="this"}}
+            </td>
+        </tr>
+    {{/each}}
 </table>
 
 <button {{action 'save'}}>Update</button>

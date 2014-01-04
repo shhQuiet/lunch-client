@@ -3,25 +3,25 @@ function getClass(place, idx) {
 }
 
 LunchClient.DaysOpenComponent = Ember.Component.extend({
-    sunClass: function() {
+    sunClass: function () {
         return getClass(this.get('place'), 0);
     }.property('place.daysOpen'),
-    monClass: function() {
+    monClass: function () {
         return getClass(this.get('place'), 1);
     }.property('place.daysOpen'),
-    tueClass: function() {
+    tueClass: function () {
         return getClass(this.get('place'), 2);
     }.property('place.daysOpen'),
-    wedClass: function() {
+    wedClass: function () {
         return getClass(this.get('place'), 3);
     }.property('place.daysOpen'),
-    thuClass: function() {
+    thuClass: function () {
         return getClass(this.get('place'), 4);
     }.property('place.daysOpen'),
-    friClass: function() {
+    friClass: function () {
         return getClass(this.get('place'), 5);
     }.property('place.daysOpen'),
-    satClass: function() {
+    satClass: function () {
         return getClass(this.get('place'), 6);
     }.property('place.daysOpen')
 });

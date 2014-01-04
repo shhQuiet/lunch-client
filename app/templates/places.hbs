@@ -1,35 +1,36 @@
 <div class="well">
-	<div class="row">
-		<div class="col-sm-4">
-			<h1>places</h1>
-				<button data-toggle="modal" data-target="#addNewPlace" class="btn btn-default btn-small">Add new place</button>
-		</div>
-	</div>
-	<div class="row">
-		{{#each model}}
-			{{render 'place_thumb' this}}
-		{{/each}}
-	</div>
-	{{outlet}}
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>places</h1>
+            <button data-toggle="modal" data-target="#addNewPlace" class="btn btn-default btn-small">Add new place
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        {{#each model}}
+            {{render 'place_thumb' this}}
+        {{/each}}
+    </div>
+    {{outlet}}
 
 </div>
 
 <div class="modal fade" id="addNewPlace">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Add new lunch place!</h4>
-			</div>
-			<div class="modal-body">
-				{{input placeholder="Name of new place to eat" value=name class="form-control"}}
-			</div>
-			<div class="modal-footer">
-				<button {{action addNewPlace}} class="btn btn-primary" data-dismiss="modal">Add it</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-			</div>
-		</div>
-		<!-- /.modal-content -->
-	</div>
-	<!-- /.modal-dialog -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Add new lunch place!</h4>
+            </div>
+            <div class="modal-body">
+                {{input placeholder="Name of new place to eat" value=name class="form-control"}}
+            </div>
+            <div class="modal-footer">
+                <button {{action addNewPlace}} class="btn btn-primary" data-dismiss="modal">Add it</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>

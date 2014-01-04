@@ -1,4 +1,4 @@
 LunchClient.VisitsController = Ember.ArrayController.extend({
-  // Implement your controller here.
+    // Implement your controller here.
 });
 

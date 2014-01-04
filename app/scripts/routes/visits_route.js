@@ -1,5 +1,5 @@
 LunchClient.VisitsRoute = Ember.Route.extend({
-    model: function() {
+    model: function () {
         return this.get('store').find('visit');
     }
 });

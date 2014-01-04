@@ -1,6 +1,6 @@
 LunchClient.UsersNewController = Ember.Controller.extend({
     actions: {
-        save: function() {
+        save: function () {
             var self = this,
                 days,
                 username = this.get('username'),
@@ -10,7 +10,7 @@ LunchClient.UsersNewController = Ember.Controller.extend({
                 username: username,
                 basicAuth: btoa(username + ":" + password)
             };
-            this.store.createRecord('user', mdl).save().then(function() {
+            this.store.createRecord('user', mdl).save().then(function () {
                 self.transitionToRoute('users');
             });
         }

@@ -1,11 +1,11 @@
 <div class="well">
-	<h1>users</h1>
-	{{#link-to 'users.new'}}add new user{{/link-to}}
-{{outlet}}
-	<div class="row">
-		{{#each model}}
-		{{render 'user_thumb' this}}
-	{{/each}}
-	</div>
-</ul>
+    <h1>users</h1>
+    {{#link-to 'users.new'}}add new user{{/link-to}}
+    {{outlet}}
+    <div class="row">
+        {{#each model}}
+            {{render 'user_thumb' this}}
+        {{/each}}
+    </div>
+    </ul>
 </div>

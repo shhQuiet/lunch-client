@@ -3,7 +3,7 @@ LunchClient.ApplicationAdapter = DS.FixtureAdapter;
 LunchClient.ApplicationAdapter = DS.RESTAdapter.extend({
     host: 'http://localhost:3000'
 });
-LunchClient.ApplicationAdapter.ajaxOptions = function(url, type, hash) {
+LunchClient.ApplicationAdapter.ajaxOptions = function (url, type, hash) {
     hash = hash || {};
     hash.url = url;
     hash.type = type;
@@ -18,8 +18,8 @@ LunchClient.ApplicationAdapter.ajaxOptions = function(url, type, hash) {
     var headers = {
         Authorization: this.get('auth')
     };
-    hash.beforeSend = function(xhr) {
-        forEach.call(Ember.keys(headers), function(key) {
+    hash.beforeSend = function (xhr) {
+        forEach.call(Ember.keys(headers), function (key) {
             xhr.setRequestHeader(key, headers[key]);
         });
     };

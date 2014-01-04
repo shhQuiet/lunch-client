@@ -1,4 +1,4 @@
-LunchClient.Router.map(function() {
+LunchClient.Router.map(function () {
 
     this.resource('suggestions');
     this.resource('suggestion', {
@@ -13,7 +13,7 @@ LunchClient.Router.map(function() {
         path: '/place_edit/:place_edit_id/edit'
     });
 
-    this.resource('places', function() {
+    this.resource('places', function () {
         this.route('new');
     });
     this.resource('place', {
@@ -29,7 +29,7 @@ LunchClient.Router.map(function() {
         path: '/place/:place_id/edit'
     });
 
-    this.resource('users', function() {
+    this.resource('users', function () {
         this.route('new');
     });
     this.resource('user', {

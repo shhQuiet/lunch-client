@@ -1,11 +1,11 @@
 {{#link-to 'user' this}}
-<div class="col-xs-6 col-sm-2 place thumbnail">
-	{{#if thumbnailUrl}}
-	<img {{bind-attr src=thumbnailUrl}}>
-	{{else}}
-		{{username}}
-	{{/if}}
-	<hr/>
-	{{desc}}
-</div>
+    <div class="col-xs-6 col-sm-2 place thumbnail">
+        {{#if thumbnailUrl}}
+            <img {{bind-attr src=thumbnailUrl}}>
+        {{else}}
+            {{username}}
+        {{/if}}
+        <hr/>
+        {{desc}}
+    </div>
 {{/link-to}}
