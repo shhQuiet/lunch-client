@@ -1,9 +1,9 @@
-<h1>{{name}}</h1>
+<h1>{{username}}</h1>
 
 <form role="form">
 	<div class="form-group">
 		<label>
-			Name
+			Username
 			{{input value=name class="form-control"}}
 		</label>
 		<label>
@@ -11,9 +11,9 @@
 			{{input value=thumbnailUrl class="form-control"}}
 		</label>
 	</div>
-	<div>{{render "place_thumb" this}}</div>
+	<div>{{render "user_thumb" this}}</div>
 	<button {{action save}} class="btn btn-default">Save</button>
-	<button {{action deletePlace}} class="btn btn-danger">Delete this place</button>
+	<button {{action deleteUser}} class="btn btn-danger">Delete this user</button>
 </form>
 
 {{outlet}}

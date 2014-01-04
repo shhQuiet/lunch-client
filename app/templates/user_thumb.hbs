@@ -1,9 +1,9 @@
-{{#link-to 'place' this}}
+{{#link-to 'user' this}}
 <div class="col-xs-6 col-sm-2 place thumbnail">
 	{{#if thumbnailUrl}}
 	<img {{bind-attr src=thumbnailUrl}}>
 	{{else}}
-		{{name}}
+		{{username}}
 	{{/if}}
 	<hr/>
 	{{desc}}
