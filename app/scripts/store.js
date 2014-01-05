@@ -20,7 +20,7 @@ LunchClient.ApplicationAdapter.ajaxOptions = function (url, type, hash) {
     };
 
     hash.beforeSend = function (xhr) {
-        Ember.keys(headers).forEach.(function (key) {
+        Ember.keys(headers).forEach(function (key) {
             xhr.setRequestHeader(key, headers[key]);
         });
     };
