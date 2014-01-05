@@ -18,8 +18,9 @@ LunchClient.ApplicationAdapter.ajaxOptions = function (url, type, hash) {
     var headers = {
         Authorization: this.get('auth')
     };
+
     hash.beforeSend = function (xhr) {
-        forEach.call(Ember.keys(headers), function (key) {
+        Ember.keys(headers).forEach.(function (key) {
             xhr.setRequestHeader(key, headers[key]);
         });
     };
