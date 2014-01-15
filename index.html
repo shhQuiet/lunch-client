@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lunch-client by shhQuiet</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Lunch-client</h1>
+        <p class="header">A group lunch stat/chooser</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/shhQuiet/lunch-client/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/shhQuiet/lunch-client/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/shhQuiet/lunch-client">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/shhQuiet">shhQuiet</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="lunch-client-" class="anchor" href="#lunch-client-"><span class="octicon octicon-link"></span></a>lunch-client <a href="http://travis-ci.org/shhQuiet/lunch-client"><img src="http://travis-ci.org/shhQuiet/lunch-client.png" alt="Travis build status"></a>
+</h1>
+
+<p>A group lunch stat/chooser</p>
+
+<p>The <a href="http://github.com/shhQuiet/lunch">server</a> is a node.js application that uses 'mongodb' as a back-end data store and the 'express' module for HTTP request routing.</p>
+
+<p>The client is an Ember application that uses Bootstrap 3 for CSS and components.</p>
+
+<p>In general, I am using the RESTAdapater from Ember Data with no changes.  I have been modifying my backend server to accomodate the needs of the adapter.</p>
+
+<p>In the UI model:</p>
+
+<ul>
+<li>
+<code>Place</code> <em>hasMany</em> <code>Visit</code>
+</li>
+<li>
+<code>Visit</code> <em>belongsTo</em> <code>Place</code>
+</li>
+<li>
+<code>Visit</code> <em>hasMany</em> <code>Diner</code>
+</li>
+<li>
+<code>Diner</code> <em>hasMany</em> <code>Place</code>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
