@@ -1,18 +1,20 @@
-<h1>visit</h1>
+<div class="well">
+    <h1>visit</h1>
 
-<table>
-    {{#each model.attributes}}
-        <tr>
-            <td>
-                <strong>{{this.key}}:</strong>
-            </td>
-            <td>
-                {{this.value}}
-            </td>
-        </tr>
-    {{/each}}
-</table>
+    <table>
+        {{#each model.attributes}}
+            <tr>
+                <td>
+                    <strong>{{this.key}}:</strong>
+                </td>
+                <td>
+                    {{this.value}}
+                </td>
+            </tr>
+        {{/each}}
+    </table>
 
-{{#linkTo 'user.edit' model}}Change{{/linkTo}}
+    {{#linkTo 'user.edit' model}}Change{{/linkTo}}
 
-{{outlet}}
+    {{outlet}}
+</div>

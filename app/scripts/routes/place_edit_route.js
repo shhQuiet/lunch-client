@@ -1,4 +1,4 @@
-LunchClient.PlaceEditRoute = Ember.Route.extend({
+LunchClient.PlaceEditRoute = LunchClient.SecuredRoute.extend({
     init: function () {
         var self = this;
         this.addObserver('exit', self.get('model'), function () {
