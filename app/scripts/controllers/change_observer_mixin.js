@@ -1,13 +1,13 @@
 LunchClient.ChangeObserverRouteMixin = Ember.Mixin.create({
     actions: {
         willTransition: function(transition) {
-        	var lastTrans;
+            var lastTrans;
 
             if (this.controller.get('isDirty')) {
-            	lastTrans=LunchClient.get('pendingTransition');
-            	if (lastTrans) {
-            		return true;
-            	}
+                lastTrans = LunchClient.get('pendingTransition');
+                if (lastTrans) {
+                    return true;
+                }
                 Ember.$('#confirmChanges').modal();
                 LunchClient.set('pendingTransition', transition);
                 transition.abort();

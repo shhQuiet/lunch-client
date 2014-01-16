@@ -1,7 +1,7 @@
 LunchClient.Store = DS.Store.extend();
 LunchClient.ApplicationAdapter = DS.FixtureAdapter;
 LunchClient.ApplicationAdapter = DS.RESTAdapter.extend({
-    host: 'http://localhost:3000'
+    host: 'http://group-lunch-stats.herokuapp.com/'
 });
 LunchClient.ApplicationAdapter.ajaxOptions = function (url, type, hash) {
     hash = hash || {};
