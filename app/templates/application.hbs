@@ -17,13 +17,13 @@
                 <li id="login-container" class="nav navbar-nav navbar-right">
                     {{#if loggedIn}}
                         You&apos;re logged in as {{username}}.
-                        <button {{action logout}} class="btn">logout</button>
+                    <button {{action logout}} class="btn">logout</button>
                     {{else}}
-                        <div>
-                            {{input placeholder="username" value=username id=username}}
+                    <div>
+                        {{input placeholder="username" value=username id=username}}
                             {{input type="password" placeholder="password" value=password}}
-                            <button {{action login}} class="btn">login</button>
-                        </div>
+                        <button {{action login}} class="btn">login</button>
+                    </div>
                     {{/if}}
                 </li>
             </ul>
@@ -31,5 +31,27 @@
     </nav>
     <div class="myContainer" id="main">
         <div class="row">{{outlet}}</div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmChanges">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Lose changes?</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning">
+                    You've made some changes to this page.
+            If you continue, you will lose these changes.  Do you want to abandon your changes
+            or stay on this page?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button {{action abortTransition}} data-dismiss="modal" class="btn btn-primary">Stay on this page</button>
+                <button {{action confirmTransition}} data-dismiss="modal" class="btn btn-default">Abandon changes and continue</button>
+            </div>
+        </div>
     </div>
 </div>

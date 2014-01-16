@@ -3,7 +3,7 @@ LunchClient.ApplicationController = Ember.Controller.extend({
     password: '',
     loggedIn: false,
     actions: {
-        login: function () {
+        login: function() {
             var auth = btoa(this.get('username') + ':' + this.get('password'));
             console.log('auth:' + auth);
             LunchClient.set('auth', auth);
@@ -12,10 +12,20 @@ LunchClient.ApplicationController = Ember.Controller.extend({
             };
             this.set('loggedIn', true);
         },
-        logout: function () {
+        logout: function() {
             this.set('loggedIn', false);
             this.set('password', '');
             LunchClient.set('auth', null);
+        },
+        confirmTransition: function() {
+            var trans = LunchClient.get('pendingTransition');
+            if (trans) {
+                LunchClient.set('pendingTransition', null);
+                trans.retry();
+            }
+        },
+        abortTransition: function() {
+            this.set('pendingTransition', null);
         }
     }
 });

@@ -1,13 +1,13 @@
-{{#link-to 'place' this}}
-    <div class="col-xs-6 col-sm-3 col-lg-2 place">
-        <div class="thumbnail">
-            <h1>{{name}}</h1>
-            <hr/>
-            {{#if thumbnailUrl}}
-                <img {{bind-attr src=thumbnailUrl}} class="img-responsive">
-            {{/if}}
-            <hr/>
-            {{desc}}
-        </div>
+<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 col-xl-1 place">
+    {{#link-to 'place' this}}
+    <div class="thumbnail">
+        <h1>{{name}}</h1>
+        <hr/>
+        {{#if thumbnailUrl}}
+        <img {{bind-attr src=thumbnailUrl}} class="img-responsive">
+        {{/if}}
+        <hr/>
+        <div class="hidden-xs desc">{{desc}}</div>
     </div>
-{{/link-to}}
+    {{/link-to}}
+</div>
