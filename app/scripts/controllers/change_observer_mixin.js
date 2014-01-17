@@ -11,6 +11,7 @@ LunchClient.ChangeObserverRouteMixin = Ember.Mixin.create({
                 Ember.$('#confirmChanges').modal();
                 LunchClient.set('pendingTransition', transition);
                 transition.abort();
+                return false;
             } else {
                 // Bubble the `willTransition` action so that
                 // parent routes can decide whether or not to abort.
