@@ -1,4 +1,4 @@
-lunch-client [![Travis build status](http://travis-ci.org/shhQuiet/lunch-client.png)](http://travis-ci.org/shhQuiet/lunch-client)
+lunch-client [![Travis build status](http://travis-ci.org/shhQuiet/lunch-client.png)](http://travis-ci.org/shhQuiet/lunch-client) [![Code Climate](https://codeclimate.com/github/shhQuiet/lunch-client.png)](https://codeclimate.com/github/shhQuiet/lunch-client)
 ============
 
 A group lunch stat/chooser

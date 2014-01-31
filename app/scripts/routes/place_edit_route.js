@@ -1,6 +1,6 @@
 //LunchClient.ChangeObserverRouteMixin, 
 
-LunchClient.PlaceEditRoute = LunchClient.SecuredRoute.extend({
+LunchClient.PlaceEditRoute = Ember.Route.extend(LunchClient.SecuredRouteMixin, {
     init: function() {
         var self = this;
         this.addObserver('exit', self.get('model'), function() {

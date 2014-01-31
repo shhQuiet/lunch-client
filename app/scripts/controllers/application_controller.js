@@ -4,13 +4,40 @@ LunchClient.ApplicationController = Ember.Controller.extend({
     loggedIn: false,
     actions: {
         login: function() {
-            var auth = btoa(this.get('username') + ':' + this.get('password'));
-            console.log('auth:' + auth);
-            LunchClient.set('auth', auth);
-            LunchClient.ApplicationAdapter.headers = {
-                'Authorization': auth
-            };
-            this.set('loggedIn', true);
+            var self = this;
+            var auth = "Basic %@".fmt(btoa("%@:%@".fmt(self.get('username'), self.get('password'))));
+
+            // console.log('auth:' + auth);
+            Ember.$.ajax({
+                type: "GET",
+                url: LunchClient.get('serverHost') + "/check_auth",
+                headers: {
+                    Authorization: auth
+                }
+            }).done(function(data, textStatus, jqXHR) {
+                console.log(textStatus);
+                LunchClient.set('auth', auth);
+                LunchClient.ApplicationAdapter = LunchClient.ApplicationAdapter.reopen({
+                    headers: {
+                        Authorization: auth
+                    }
+                });
+                self.set('loggedIn', true);
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                var elem = Ember.$('#login-container');
+
+                elem.popover({
+                    title: 'Login Required',
+                    content: 'Sorry, your credentials didn\'t check out.  Please try again.',
+                    placement: 'bottom',
+                    trigger: 'manual'
+                });
+                elem.popover('show');
+                setTimeout(function() {
+                    elem.popover('destroy');
+                }, 5000);
+
+            });
         },
         logout: function() {
             this.set('loggedIn', false);
@@ -20,12 +47,11 @@ LunchClient.ApplicationController = Ember.Controller.extend({
         confirmTransition: function() {
             var trans = LunchClient.get('pendingTransition');
             if (trans) {
-                LunchClient.set('pendingTransition', null);
                 trans.retry();
             }
         },
         abortTransition: function() {
-            this.set('pendingTransition', null);
+            LunchClient.set('pendingTransition', null);
         }
     }
 });

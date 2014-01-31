@@ -1,0 +1,11 @@
+{{#link-to 'place' this}}
+<div class="thumbnail">
+    <h1>{{name}}</h1>
+    <hr/>
+    {{#if thumbnailUrl}}
+    <img {{bind-attr src=thumbnailUrl}} class="img-responsive">
+    {{/if}}
+    <hr/>
+    <div class="hidden-xs desc">{{desc}}</div>
+</div>
+{{/link-to}}

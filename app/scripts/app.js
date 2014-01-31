@@ -1,4 +1,7 @@
 var LunchClient = window.LunchClient = Ember.Application.create({
+    serverHost: "http://localhost:3000",
+    pendingTransition: null,
+    auth: null
 });
 
 function backAndForth(count, selector, config1, config2, inoutTime, pauseTime) {
@@ -27,37 +30,8 @@ function backAndForth(count, selector, config1, config2, inoutTime, pauseTime) {
     repeat();
 }
 
-LunchClient.SecuredRoute = Ember.Route.extend({
-    beforeModel: function(transition) {
-        var auth = LunchClient.get('auth'),
-            hint, container, pulseCount = 5,
-            elem;
-
-        if (auth) {
-            console.log('auth:' + auth);
-        } else {
-            transition.abort();
-
-            elem = Ember.$('#login-container');
-
-            elem.popover({
-                title: 'Login Required',
-                content: 'To do that, you\'ll need to login here!',
-                placement: 'bottom',
-                trigger: 'manual'
-            });
-
-            elem.popover('show');
-            setTimeout(function() {
-                elem.popover('hide');
-            }, 5000);
-
-            elem.focus();
-        }
-    }
-});
-
 /* Order and include as you please. */
+require('scripts/mixins/*');
 require('scripts/controllers/*');
 require('scripts/store');
 require('scripts/models/*');

@@ -1,4 +1,3 @@
-/*global Ember */
 LunchClient.Place = DS.Model.extend({
     name: DS.attr(),
     desc: DS.attr(),
