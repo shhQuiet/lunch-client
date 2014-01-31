@@ -17,7 +17,7 @@ LunchClient.ApplicationController = Ember.Controller.extend({
             }).done(function(data, textStatus, jqXHR) {
                 console.log(textStatus);
                 LunchClient.set('auth', auth);
-                LunchClient.ApplicationAdapter = LunchClient.ApplicationAdapter.reopen({
+                LunchClient.ApplicationAdapter.reopen({
                     headers: {
                         Authorization: auth
                     }
@@ -42,7 +42,7 @@ LunchClient.ApplicationController = Ember.Controller.extend({
         logout: function() {
             this.set('loggedIn', false);
             this.set('password', '');
-            LunchClient.set('auth', null);
+            // LunchClient.set('auth', null);
         },
         confirmTransition: function() {
             var trans = LunchClient.get('pendingTransition');
