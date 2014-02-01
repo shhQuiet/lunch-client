@@ -17,11 +17,15 @@ LunchClient.ApplicationController = Ember.Controller.extend({
             }).done(function(data, textStatus, jqXHR) {
                 console.log(textStatus);
                 LunchClient.set('auth', auth);
-                LunchClient.ApplicationAdapter.reopen({
-                    headers: {
-                        Authorization: auth
-                    }
+                Ember.$.ajaxPrefilter(function(options, oriOpt, jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", auth);
                 });
+                // LunchClient.ApplicationAdapter.reopen({
+                //     headers: {
+                //         Authorization: auth
+                //     }
+                // });
+
                 self.set('loggedIn', true);
             }).fail(function(jqXHR, textStatus, errorThrown) {
                 var elem = Ember.$('#login-container');
